@@ -115,14 +115,25 @@ const viewCopy = {
   talent: ["海员人才库", "沉淀海员人才信息，支撑后续招聘检索和复用。"]
 };
 
+function setActiveView(view, updateHash = true) {
+  const nextView = viewCopy[view] ? view : "jobs";
+  navButtons.forEach((item) => item.classList.toggle("active", item.dataset.view === nextView));
+  viewPanels.forEach((panel) => panel.classList.toggle("active", panel.id === `${nextView}View`));
+  pageTitle.textContent = viewCopy[nextView][0];
+  pageDescription.textContent = viewCopy[nextView][1];
+  if (updateHash) {
+    history.replaceState(null, "", `#${nextView}`);
+  }
+}
+
 navButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const view = button.dataset.view;
-    navButtons.forEach((item) => item.classList.toggle("active", item === button));
-    viewPanels.forEach((panel) => panel.classList.toggle("active", panel.id === `${view}View`));
-    pageTitle.textContent = viewCopy[view][0];
-    pageDescription.textContent = viewCopy[view][1];
+    setActiveView(button.dataset.view);
   });
+});
+
+window.addEventListener("hashchange", () => {
+  setActiveView(location.hash.replace("#", ""), false);
 });
 
 jobRows.addEventListener("click", (event) => {
@@ -144,3 +155,4 @@ closeDrawer.addEventListener("click", () => {
 
 renderRows();
 renderResumeRows();
+setActiveView(location.hash.replace("#", ""), false);
