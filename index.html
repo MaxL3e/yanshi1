@@ -190,15 +190,58 @@
         </section>
 
         <section class="workspace view-panel" id="talentView">
+          <div class="toolbar">
+            <div class="filter-row">
+              <div class="filters talent-filters">
+                <label>姓名<input type="search" placeholder="请输入海员姓名"></label>
+                <label>证件号码<input type="search" placeholder="请输入身份证或护照号码"></label>
+                <label>性别<select><option>全部性别</option><option>男</option><option>女</option></select></label>
+                <label>国籍<select><option>全部国籍</option><option>中国</option><option>菲律宾</option><option>印度尼西亚</option></select></label>
+              </div>
+              <div class="command-row">
+                <button class="primary-btn small">查询</button>
+                <button class="ghost-btn">重置</button>
+              </div>
+            </div>
+          </div>
           <div class="content-grid">
-            <section class="data-panel empty-panel">
+            <section class="data-panel">
               <div class="panel-head">
                 <div>
                   <h2>海员人才库</h2>
-                  <p>沉淀已收集的海员人才信息，用于后续检索和复用。</p>
+                  <p>沉淀已收集的海员基础信息，用于后续招聘检索和复用。</p>
                 </div>
               </div>
-              <div class="empty-state">人才库列表可在下一步扩展。</div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>姓名</th>
+                      <th>性别</th>
+                      <th>国籍</th>
+                      <th>身份证/护照号码</th>
+                      <th>出生日期</th>
+                      <th>联系方式</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="talentRows"></tbody>
+                </table>
+              </div>
+              <footer class="table-footer">
+                <span>共 1,026 条</span>
+                <select><option>50条/页</option><option>100条/页</option></select>
+                <div class="pager">
+                  <button>‹</button>
+                  <button class="active">1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>›</button>
+                </div>
+                <span>耗时: 0.751秒</span>
+              </footer>
             </section>
           </div>
         </section>

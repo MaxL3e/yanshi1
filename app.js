@@ -30,6 +30,19 @@ const resumes = [
   ["郑一鸣", "二副", "大连港-日本冷藏船项目", "甲类二副证", "9年", "186****4207", "2026-05-10 15:56", "已查看"]
 ];
 
+const talents = [
+  ["sd001", "朱晓明", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd002", "胡龙", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd003", "朱毅", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd004", "陈晓光", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd005", "钟红苇", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd006", "王小兰", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd007", "胡天名", "女", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd008", "吴明月", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd009", "张毅", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"],
+  ["sd010", "朱良民", "男", "中国", "310254152302415233", "2000-11-01", "139253664524"]
+];
+
 const resumeStatusClass = {
   "新投递": "online",
   "已查看": "pending",
@@ -38,6 +51,7 @@ const resumeStatusClass = {
 
 const jobRows = document.querySelector("#jobRows");
 const resumeRows = document.querySelector("#resumeRows");
+const talentRows = document.querySelector("#talentRows");
 const drawer = document.querySelector("#drawer");
 const closeDrawer = document.querySelector("#closeDrawer");
 const pageTitle = document.querySelector("#pageTitle");
@@ -100,6 +114,29 @@ function renderResumeRows() {
   }).join("");
 }
 
+function renderTalentRows() {
+  talentRows.innerHTML = talents.map((talent) => {
+    const [id, name, gender, nationality, credential, birthday, phone] = talent;
+    return `
+      <tr>
+        <td>${id}</td>
+        <td><a class="table-link" href="#">${name}</a></td>
+        <td>${gender}</td>
+        <td>${nationality}</td>
+        <td>${credential}</td>
+        <td>${birthday}</td>
+        <td>${phone}</td>
+        <td>
+          <div class="row-actions talent-actions">
+            <button>详情</button>
+            <button>船员信息</button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join("");
+}
+
 const viewCopy = {
   jobs: ["招聘信息发布", "以航线为主线发布海员招聘信息，集中收集报名简历并同步到平台。"],
   resumes: ["招聘简历收集", "集中查看从各招聘岗位投递过来的海员信息，快速筛选并联系候选人。"],
@@ -146,4 +183,5 @@ closeDrawer.addEventListener("click", () => {
 
 renderRows();
 renderResumeRows();
+renderTalentRows();
 setActiveView(location.hash.replace("#", ""), false);
