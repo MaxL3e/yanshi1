@@ -392,12 +392,6 @@ th:last-child {
   padding: 4px 8px;
   border-radius: 5px;
 }
-.table-link {
-  color: #2f85ff;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 .row-actions { display: flex; gap: 6px; }
 .row-actions button {
   border: 1px solid #b9dadc;

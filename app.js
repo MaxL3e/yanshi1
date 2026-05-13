@@ -120,7 +120,7 @@ function renderTalentRows() {
     return `
       <tr>
         <td>${id}</td>
-        <td><a class="table-link" href="#">${name}</a></td>
+        <td>${name}</td>
         <td>${gender}</td>
         <td>${nationality}</td>
         <td>${credential}</td>
