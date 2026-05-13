@@ -36,9 +36,6 @@ const resumeStatusClass = {
   "已联系": "running"
 };
 
-const loginForm = document.querySelector("#loginForm");
-const loginView = document.querySelector("#loginView");
-const dashboardView = document.querySelector("#dashboardView");
 const jobRows = document.querySelector("#jobRows");
 const resumeRows = document.querySelector("#resumeRows");
 const drawer = document.querySelector("#drawer");
@@ -47,12 +44,6 @@ const pageTitle = document.querySelector("#pageTitle");
 const pageDescription = document.querySelector("#pageDescription");
 const navButtons = document.querySelectorAll(".side-nav button[data-view]");
 const viewPanels = document.querySelectorAll(".view-panel");
-
-loginForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  loginView.classList.add("is-hidden");
-  dashboardView.classList.remove("is-hidden");
-});
 
 function renderRows() {
   jobRows.innerHTML = jobs.map((job, index) => {
