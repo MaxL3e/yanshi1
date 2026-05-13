@@ -1,160 +1,268 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>退役军人专区</title>
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
-  <body>
-    <div class="page" id="top">
-      <header class="topbar">
-        <img class="topbar__bg" src="images/v9_1024.png" alt="中智招聘" />
-        <div class="topbar__title">退役军人专区</div>
-      </header>
-
-      <main class="content">
-        <section class="hero animate delay-1">
-          <img src="images/v2_13.png" alt="戎耀启航 才擎国业" loading="lazy" />
-        </section>
-
-        <section class="section animate delay-2" id="empower">
-          <div class="section__title">职业赋能</div>
-          <div class="feature-card">
-            <div class="feature-item">
-              <div class="feature-icon feature-icon--a"></div>
-              <div class="feature-text">
-                <div class="feature-title">精准职业测评</div>
-                <div class="feature-desc">生成专属能力画像</div>
-              </div>
-              <div class="feature-arrow" aria-hidden="true"></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon feature-icon--b"></div>
-              <div class="feature-text">
-                <div class="feature-title">“退役军人专属”AI简历优化</div>
-                <div class="feature-desc">军工经历转职场语言</div>
-              </div>
-              <div class="feature-arrow" aria-hidden="true"></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon feature-icon--c"></div>
-              <div class="feature-text">
-                <div class="feature-title">AI模拟面试官</div>
-                <div class="feature-desc">模拟面试提前演练不慌</div>
-              </div>
-              <div class="feature-arrow" aria-hidden="true"></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon feature-icon--d"></div>
-              <div class="feature-text">
-                <div class="feature-title">专业心理咨询与支持</div>
-                <div class="feature-desc">心理咨询随时疏导压力</div>
-              </div>
-              <div class="feature-arrow" aria-hidden="true"></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon feature-icon--e"></div>
-              <div class="feature-text">
-                <div class="feature-title">线上系列课程培训</div>
-                <div class="feature-desc">线上课程专属培训</div>
-              </div>
-              <div class="feature-arrow" aria-hidden="true"></div>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中智海员人才平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <section class="login-view" id="loginView" aria-label="登录">
+      <div class="login-art">
+        <div class="brand-mark">CIIC</div>
+        <h1>中智海员人才平台</h1>
+        <p>连接船东、服务机构与海员队伍，让招聘信息发布和简历收集更清晰高效。</p>
+      </div>
+      <form class="login-panel" id="loginForm">
+        <div>
+          <span class="eyebrow">Seafarer Console</span>
+          <h2>欢迎回来</h2>
+          <p>进入海员招聘信息管理后台。</p>
+        </div>
+        <label>
+          <span>账号</span>
+          <input type="text" value="crew_admin" autocomplete="username">
+        </label>
+        <label>
+          <span>密码</span>
+          <input type="password" value="123456789" autocomplete="current-password">
+        </label>
+        <label>
+          <span>验证码</span>
+          <div class="code-row">
+            <input type="text" placeholder="请输入验证码">
+            <button type="button">获取验证码</button>
           </div>
-          <div class="help-note">
-            <span class="help-note__icon" aria-hidden="true"></span>
-            <span
-              >*若您有任何疑问或使用咨询，请于工作日（9:00 - 17:30）咨询热线：400 -
-              884 - 7868</span
-            >
-          </div>
-        </section>
+        </label>
+        <div class="login-options">
+          <label><input type="checkbox" checked> 记住我</label>
+          <label><input type="checkbox" checked> 自动登录</label>
+          <a href="#">忘记密码?</a>
+        </div>
+        <button class="primary-btn" type="submit">登录平台</button>
+      </form>
+    </section>
 
-        <section class="section animate delay-3" id="hiring">
-          <div class="section__title">行业招聘</div>
-          <div class="event-grid">
-            <article class="event-card">
-              <img
-                src="images/v2_95.png"
-                alt="冬日雪暖阳·戎耀再启航 专场招聘会"
-                loading="lazy"
-              />
-              <span class="event-tag">进行中</span>
-            </article>
-            <article class="event-card">
-              <img
-                src="images/v2_104.png"
-                alt="退役军人新疆西藏青海“三地”专场招聘会"
-                loading="lazy"
-              />
-              <span class="event-tag">进行中</span>
-            </article>
+    <section class="dashboard-view is-hidden" id="dashboardView">
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <div class="brand-icon">ciic</div>
+          <div>
+            <strong>中智海员</strong>
+            <span>Ocean Crew Cloud</span>
           </div>
-          <button class="more-btn" type="button">查看更多</button>
-        </section>
+        </div>
+        <nav class="side-nav" aria-label="主导航">
+          <button class="active" data-view="jobs">招聘信息发布</button>
+          <button data-view="resumes">招聘简历收集</button>
+          <button data-view="talent">海员人才库</button>
+        </nav>
+      </aside>
 
-        <section class="section animate delay-4" id="province">
-          <div class="section__title">省级归集</div>
-          <div class="province-grid">
-            <img src="images/v2_312.png" alt="浙江" loading="lazy" />
-            <img src="images/v2_313.png" alt="上海" loading="lazy" />
-            <img src="images/v2_314.png" alt="北京" loading="lazy" />
-            <img src="images/v2_316.png" alt="广东" loading="lazy" />
-            <img src="images/v2_317.png" alt="天津" loading="lazy" />
-            <img src="images/v2_318.png" alt="江苏" loading="lazy" />
+      <main class="main">
+        <header class="topbar">
+          <div class="top-actions">
+            <span class="weather-chip">上海港 20°C~31°C</span>
+            <span class="sea-chip">海况良好</span>
+            <button class="icon-btn">消息 <em>0</em></button>
+            <button class="icon-btn">全屏</button>
+            <button class="user-chip">管理员</button>
+          </div>
+        </header>
+
+        <section class="hero-band">
+          <div>
+            <span class="eyebrow">Ocean Crew Operations</span>
+            <h1 id="pageTitle">招聘信息发布</h1>
+            <p id="pageDescription">以航线为主线发布海员招聘信息，集中收集报名简历并同步到平台。</p>
+          </div>
+          <div class="summary-grid">
+            <div><strong>186</strong><span>岗位总数</span></div>
+            <div><strong>132</strong><span>在线岗位</span></div>
+            <div><strong>28</strong><span>今日简历</span></div>
           </div>
         </section>
 
-        <section class="section animate delay-5" id="jobs">
-          <div class="section__title">精选岗位</div>
-          <div class="job-list">
-            <article class="job-card">
-              <div class="job-header">
-                <div class="job-logo">
-                  <img src="images/v16_1570.png" alt="中科院计算所" loading="lazy" />
-                </div>
-                <div class="job-info">
-                  <div class="job-company">中国光大银行股份有...</div>
-                  <div class="job-meta">招聘30人· 本科 · 天津-经开区</div>
-                </div>
-                <div class="job-salary">6千-9千</div>
+        <section class="workspace view-panel active" id="jobsView">
+          <div class="toolbar">
+            <div class="filter-row">
+              <div class="filters">
+                <label>航线项目<input type="search" placeholder="请输入航线或船舶项目"></label>
+                <label>船员岗位<input type="search" placeholder="请输入水手、船长等岗位"></label>
+                <label>岗位状态<select><option>全部岗位状态</option><option>在线中</option><option>已下线</option><option>草稿</option></select></label>
+                <label>发布渠道<select><option>平台发布</option><option>海员人才平台</option><option>微信报名码</option></select></label>
               </div>
-              <div class="job-title">远程服务专员</div>
-              <div class="job-tags">
-                <span>1000人以上</span>
-                <span>国有企业</span>
+              <div class="command-row">
+                <button class="primary-btn small">查询</button>
+                <button class="ghost-btn">重置</button>
+                <button class="success-btn">创建船员岗位</button>
               </div>
-            </article>
-            <article class="job-card">
-              <div class="job-header">
-                <div class="job-logo">
-                  <img src="images/v16_1593.png" alt="中智" loading="lazy" />
-                </div>
-                <div class="job-info">
-                  <div class="job-company">中智四川直招</div>
-                  <div class="job-meta">招聘1人· 硕士 · 四川 - 绵阳</div>
-                </div>
-                <div class="job-salary">4千-5千</div>
-              </div>
-              <div class="job-title">保卫消防干事岗</div>
-              <div class="job-tags">
-                <span>150-500人</span>
-                <span>国有企业</span>
-              </div>
-            </article>
+            </div>
           </div>
-          <button class="more-btn" type="button">查看更多</button>
+
+          <div class="content-grid">
+            <section class="data-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>招聘信息列表</h2>
+                  <p>支持招聘信息编辑、渠道发布、下线和简历收集查看。</p>
+                </div>
+                <div class="segmented">
+                  <button class="active">全部</button>
+                  <button>在线</button>
+                  <button>草稿</button>
+                  <button>下线</button>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox"></th>
+                      <th>序号</th>
+                      <th>船员岗位</th>
+                      <th>岗位状态</th>
+                      <th>航线项目</th>
+                      <th>发布时间</th>
+                      <th>船舶类型</th>
+                      <th>职务类别</th>
+                      <th>薪资范围</th>
+                      <th>证书要求</th>
+                      <th>收到简历</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="jobRows"></tbody>
+                </table>
+              </div>
+              <footer class="table-footer">
+                <span>共 186 条</span>
+                <select><option>50条/页</option><option>100条/页</option></select>
+                <div class="pager">
+                  <button>‹</button>
+                  <button class="active">1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>›</button>
+                </div>
+                <span>耗时: 0.922秒</span>
+              </footer>
+            </section>
+
+          </div>
+        </section>
+
+        <section class="workspace view-panel" id="resumesView">
+          <div class="toolbar">
+            <div class="filter-row">
+              <div class="filters resume-filters">
+                <label>投递岗位<input type="search" placeholder="请输入船员岗位"></label>
+                <label>海员姓名<input type="search" placeholder="请输入姓名"></label>
+                <label>简历状态<select><option>全部简历状态</option><option>新投递</option><option>已查看</option><option>已联系</option></select></label>
+                <label>证书类型<select><option>全部证书类型</option><option>甲类证书</option><option>值班证书</option><option>专项证书</option></select></label>
+              </div>
+              <div class="command-row">
+                <button class="primary-btn small">查询</button>
+                <button class="ghost-btn">重置</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <section class="data-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>招聘简历列表</h2>
+                  <p>展示从招聘岗位投递过来的海员信息，便于集中查看和联系。</p>
+                </div>
+                <div class="segmented">
+                  <button class="active">全部</button>
+                  <button>新投递</button>
+                  <button>已查看</button>
+                  <button>已联系</button>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox"></th>
+                      <th>序号</th>
+                      <th>海员姓名</th>
+                      <th>投递岗位</th>
+                      <th>航线项目</th>
+                      <th>证书情况</th>
+                      <th>海龄</th>
+                      <th>联系电话</th>
+                      <th>投递时间</th>
+                      <th>简历状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="resumeRows"></tbody>
+                </table>
+              </div>
+              <footer class="table-footer">
+                <span>共 328 条</span>
+                <select><option>50条/页</option><option>100条/页</option></select>
+                <div class="pager">
+                  <button>‹</button>
+                  <button class="active">1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>›</button>
+                </div>
+                <span>耗时: 0.684秒</span>
+              </footer>
+            </section>
+          </div>
+        </section>
+
+        <section class="workspace view-panel" id="talentView">
+          <div class="content-grid">
+            <section class="data-panel empty-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>海员人才库</h2>
+                  <p>沉淀已收集的海员人才信息，用于后续检索和复用。</p>
+                </div>
+              </div>
+              <div class="empty-state">人才库列表可在下一步扩展。</div>
+            </section>
+          </div>
         </section>
       </main>
 
-      <aside class="quick-nav" aria-label="快捷入口">
-        <a href="#empower">职业赋能</a>
-        <a href="#hiring">行业招聘</a>
-        <a href="#province">省级归集</a>
-        <a href="#jobs">精选岗位</a>
-        <a href="#top">返回顶部</a>
+      <aside class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer-head">
+          <div>
+            <span class="eyebrow">Crew Detail</span>
+            <h2 id="drawerTitle">船员岗位详情</h2>
+          </div>
+          <button id="closeDrawer">关闭</button>
+        </div>
+        <div class="drawer-body">
+          <dl>
+            <div><dt>航线项目</dt><dd id="drawerProject">-</dd></div>
+            <div><dt>岗位状态</dt><dd><span class="status online">在线中</span></dd></div>
+            <div><dt>薪资范围</dt><dd id="drawerSalary">-</dd></div>
+            <div><dt>证书要求</dt><dd id="drawerDegree">-</dd></div>
+            <div><dt>发布渠道</dt><dd>海员人才平台、微信报名码</dd></div>
+          </dl>
+          <div class="timeline">
+            <h3>流程记录</h3>
+            <p><b>岗位创建</b><span>运营专员完成船舶、航线、职务与证书要求录入</span></p>
+            <p><b>信息发布</b><span>同步至平台、微信报名码与船东客户入口</span></p>
+            <p><b>简历收集</b><span>报名简历进入招聘简历收集模块统一查看</span></p>
+          </div>
+        </div>
       </aside>
-    </div>
-  </body>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>
